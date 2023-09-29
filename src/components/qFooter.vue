@@ -6,9 +6,9 @@
     <div class="row">
       <div class="col-4">
         <div style="font-size: 32.8px">Lorem ipsum</div>
-        <div style="font-size: 16px">
-          we are not here to sell you products, we sell value through our
-          experience
+        <div style="font-size: 16px" v-show="!viewScreen">
+          <div>we are not here to sell you products,</div>
+          <div>we sell value through our experience</div>
         </div>
       </div>
       <div class="col-8">
@@ -100,26 +100,27 @@
       ></q-img>
     </div>
     <div class="row">
-      <div class="col-12 flex justify-center">
-        <div>Subscribe to get latest updates</div>
-        <div class="full-width">
-          <div class="flex">
-            <q-input
-              class="custom-placeholder"
-              filled
-              outlined
-              style="background-color: white"
-              dense
-              placeholder="Your Email adress"
-            />
-            <q-btn
-              square
-              no-caps
-              flat
-              label="Submit"
-              style="background-color: #96c67f"
-            />
-          </div>
+      <div class="col-12 flex flex-center q-gutter-y-md">
+        <div class="full-width flex justify-center">
+          Subscribe to get latest updates
+        </div>
+        <div class="flex justify-center full-width">
+          <q-input
+            filled
+            outlined
+            :style="{ width: viewScreen ? '80%' : '30%' }"
+            dense
+            placeholder="Your Email address"
+            class="custom-input"
+          />
+
+          <q-btn
+            square
+            no-caps
+            flat
+            label="Submit"
+            style="background-color: #96c67f"
+          />
         </div>
       </div>
     </div>
@@ -134,4 +135,8 @@ const viewScreen = computed(() => {
   return $q.screen.lt.md;
 });
 </script>
-<style></style>
+<style>
+.custom-input {
+  background-color: white;
+}
+</style>

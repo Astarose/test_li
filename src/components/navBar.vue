@@ -5,7 +5,7 @@
   />
   <div class="row">
     <div
-      class="col-md-4 flex justify-center"
+      class="col-md-4 flex flex-center"
       style="color: black; font-size: 32.8px"
     >
       <q-btn v-show="viewScreen" icon="menu" flat>
@@ -28,6 +28,12 @@
       </q-btn>
       <div>Lorem Ipsum</div>
     </div>
+    <q-icon
+      name="account_circle"
+      size="24px"
+      class="flex align-center"
+      v-show="viewScreen"
+    />
     <div class="col-5">
       <q-list class="flex" v-show="!viewScreen">
         <q-item clickable>
